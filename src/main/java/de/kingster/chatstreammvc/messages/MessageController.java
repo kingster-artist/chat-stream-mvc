@@ -100,6 +100,7 @@ public class MessageController {
     }
 
     @GetMapping("/api/v1/create-message")
+    @ResponseStatus(HttpStatus.CREATED)
     public MessageEntity createMessageGET() {
         var e = MessageEntity.createQuick(UUID.randomUUID().toString().toLowerCase(Locale.ROOT), "Testnachricht durch GET am " + LocalDateTime.now().toString());
         this.messageRepository.saveNewMessage(e);

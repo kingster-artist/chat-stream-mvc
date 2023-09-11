@@ -7,11 +7,18 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * database access to the set of messages
+ */
 @Repository
 public class MessageRepository {
 
     private List<MessageEntity> messages = Collections.synchronizedList(new ArrayList<>(32));
 
+    /**
+     * creates new message
+     * @param messageEntity
+     */
     public void saveNewMessage(MessageEntity messageEntity) {
         messages.add(messageEntity);
     }
@@ -23,6 +30,10 @@ public class MessageRepository {
         }).collect(Collectors.toList());
     }
 
+    /**
+     * returns one unseen message or NULL if none is found
+     * @return
+     */
     public MessageEntity oneUnseenMessage() {
         for (MessageEntity m : messages) {
             if (!m.isSeen()) {

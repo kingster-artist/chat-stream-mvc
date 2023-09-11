@@ -2,6 +2,9 @@ package de.kingster.chatstreammvc.messages;
 
 import lombok.Data;
 
+/**
+ * the entity to be stored
+ */
 @Data
 public class MessageEntity {
 
