@@ -11,4 +11,5 @@
 * `MessageController.getMessagesStream` erzeugt einen EventStream mit speziellem Content-Type, der Browser hält daraufhin die Verbindung offen
 * In einem eigenen Thread wird auf neue Nachrichten geprüft und mittels des Streams ausgeliefert
 
-  
+![](./bausteinsicht.png)
+
